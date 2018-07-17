@@ -1,0 +1,9 @@
+#ifndef __AGV_Param_H
+#define __AGV_Param_H
+
+#define AGV_Tire_Diametre 6.35f                  // cm
+#define AGV_Encoder_Val_perRound 600             // ´Î
+
+
+#endif  // __AGV_Param_H
+

@@ -1,0 +1,52 @@
+#ifndef __Car_H
+
+#define __Car_H
+
+#include <config.h>
+
+#include "stm32f10x.h"
+#include "system_stm32f10x.h"
+#include "sys.h"
+#include "DataScope_DP.h"
+#include "led.h"
+#include "delay.h"
+#include "key.h"
+
+#include "usart.h"
+#include "timer.h"
+#include "oled.h"
+#include "mpu6050.h"
+#include "inv_mpu.h"
+#include "motor.h"
+#include "encoder.h"
+#include "contrl.h"
+#include "find.h"
+#include "servo.h"
+
+#include "stm32f10x_it.h"
+#include <odom.h>
+#include <agv_control.h>
+#include "data.h"
+
+extern int encoder_left,encoder_right;
+
+extern int Flag_Left,Flag_Right;
+
+extern float ang,dst;
+extern float ang_break_ref, dst_break_ref;
+extern float refine_status;
+
+extern bool flag_spin, flag_go, flag_light_off, flag_stop, light_off_count_start;
+extern int light_off_count;
+ 
+void Motor_Init(void);
+void PWM_Init(int arr, int psc);
+void Set_motor(int moto_L, int moto_R);
+void AGV_360_YawCtrl(float yaw_tgt, float yaw);////360
+void AGV_SetMotorOut(short moto_L, short moto_R);
+void display_Data(void);
+void set_Servo_Angles(float angle);//servo *
+
+
+#endif /*__Car_H*/
+
